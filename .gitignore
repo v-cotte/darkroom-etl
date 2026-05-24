@@ -1,0 +1,8 @@
+credentials.json
+.env
+__pycache__/
+*.pyc
+.DS_Store
+target/
+dbt_packages/
+venv/
