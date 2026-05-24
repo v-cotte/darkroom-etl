@@ -8,17 +8,17 @@ and exports reporting metrics to Google Sheets.
 
 ## Architecture
 
-BigQuery Public Dataset (GA4)
-↓
-Extract (Python) → ecommerce_raw.raw_events
-↓
-Transform (dbt) → ecommerce_mart
-├── stg_events (view)
-├── daily_metrics (table)
-├── weekly_metrics (table)
-└── top_products (table)
-↓
-Export (Python + gspread) → Google Sheets
+    BigQuery Public Dataset (GA4)
+            ↓
+    Extract (Python) → ecommerce_raw.raw_events
+            ↓
+    Transform (dbt) → ecommerce_mart
+        ├── stg_events (view)
+        ├── daily_metrics (table)
+        ├── weekly_metrics (table)
+        └── top_products (table)
+            ↓
+    Export (Python + gspread) → Google Sheets
 
 ---
 
@@ -36,23 +36,23 @@ Export (Python + gspread) → Google Sheets
 
 ## Project Structure
 
-darkroom-etl/
-├── config/
-│   └── settings.py          # Environment config
-├── pipelines/
-│   ├── extract.py           # BQ public → ecommerce_raw
-│   └── export_sheets.py     # ecommerce_mart → Google Sheets
-├── dbt_project/
-│   └── models/
-│       ├── staging/
-│       │   └── stg_events.sql
-│       └── marts/
-│           ├── daily_metrics.sql
-│           ├── weekly_metrics.sql
-│           └── top_products.sql
-├── main.py                  # Pipeline orchestrator
-├── production_design.md     # GCP production architecture
-└── requirements.txt
+    darkroom-etl/
+    ├── config/
+    │   └── settings.py          # Environment config
+    ├── pipelines/
+    │   ├── extract.py           # BQ public → ecommerce_raw
+    │   └── export_sheets.py     # ecommerce_mart → Google Sheets
+    ├── dbt_project/
+    │   └── models/
+    │       ├── staging/
+    │       │   └── stg_events.sql
+    │       └── marts/
+    │           ├── daily_metrics.sql
+    │           ├── weekly_metrics.sql
+    │           └── top_products.sql
+    ├── main.py                  # Pipeline orchestrator
+    ├── production_design.md     # GCP production architecture
+    └── requirements.txt
 
 ---
 
