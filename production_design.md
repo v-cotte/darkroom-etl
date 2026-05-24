@@ -9,16 +9,16 @@ operated in a production GCP environment, running automatically every day.
 
 ## Architecture Diagram
 
-Cloud Scheduler (daily cron)
-↓
-Cloud Run Job
-├── 1. Extract (BigQuery public → ecommerce_raw)
-├── 2. Transform (dbt run → ecommerce_mart)
-└── 3. Export (BigQuery → Google Sheets)
-↓
-Cloud Logging + Error Reporting
-↓
-Alerting (Email / Slack via Cloud Monitoring)
+    Cloud Scheduler (daily cron)
+            ↓
+    Cloud Run Job
+        ├── 1. Extract (BigQuery public → ecommerce_raw)
+        ├── 2. Transform (dbt run → ecommerce_mart)
+        └── 3. Export (BigQuery → Google Sheets)
+            ↓
+    Cloud Logging + Error Reporting
+            ↓
+    Alerting (Email / Slack via Cloud Monitoring)
 
 ---
 
