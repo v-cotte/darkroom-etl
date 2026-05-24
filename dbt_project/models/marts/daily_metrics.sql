@@ -45,8 +45,12 @@ first_purchase AS (
 new_vs_returning AS (
     SELECT
         e.event_date,
-        COUNTIF(e.event_date = fp.first_purchase_date)  AS new_customers,
-        COUNTIF(e.event_date > fp.first_purchase_date)  AS returning_customers
+        COUNT(DISTINCT CASE
+            WHEN e.event_date = fp.first_purchase_date THEN e.user_pseudo_id
+        END)                                            AS new_customers,
+        COUNT(DISTINCT CASE
+            WHEN e.event_date > fp.first_purchase_date THEN e.user_pseudo_id
+        END)                                            AS returning_customers
     FROM events e
     JOIN first_purchase fp ON e.user_pseudo_id = fp.user_pseudo_id
     WHERE e.event_name = 'purchase'
