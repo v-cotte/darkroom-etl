@@ -120,7 +120,7 @@ python pipelines/export_sheets.py
 
 ## Google Sheets Output
 
-[View Live Report](YOUR_SHEET_URL_HERE)
+[View Live Report](https://docs.google.com/spreadsheets/d/1yaMog_4KcyM9XqvCObuIgPTgtABoBNw8GBCe23aTKlo/edit?usp=sharing)
 
 Contains three tabs:
 - **Daily Metrics** — 92 rows (Nov 2020 – Jan 2021)
