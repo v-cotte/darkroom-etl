@@ -1,6 +1,6 @@
 # Darkroom ETL Pipeline
 
-End-to-end data engineering pipeline built as a take-home assessment.
+End-to-end data engineering pipeline project.
 Extracts GA4 e-commerce data from BigQuery, transforms it with dbt,
 and exports reporting metrics to Google Sheets.
 
